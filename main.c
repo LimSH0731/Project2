@@ -39,12 +39,22 @@ void filestat2(){
 
 //파일 1의 시간 정보를 가져오는 함수 작성
 void filetime1(){
-    
+    time1=localtime(&stat1.st_mtime);
+	temp.tm_mon=time1->tm_mon;
+	temp.tm_mday=time1->tm_mday;
+	temp.tm_hour=time1->tm_hour;
+	temp.tm_min=time1->tm_min;
+	time1=&temp;
 }
 
 //파일 2의 시간 정보를 가져오는 함수 작성
 void filetime2(){
-    
+    time2=localtime(&stat2.st_mtime);
+	temp.tm_mon=time2->tm_mon;
+	temp.tm_mday=time2->tm_mday;
+	temp.tm_hour=time2->tm_hour;
+	temp.tm_min=time2->tm_min;
+	time2=&temp;
 }
 
 //두 개의 파일 크기를 비교하는 함수 작성
